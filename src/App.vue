@@ -58,7 +58,8 @@ async function authenticate() {
   clearResult();
 
   const challenge = randomBytes(32);
-  const publicKey = { challenge };
+  const rpId = 'netlify.app'
+  const publicKey = { challenge, rpId };
 
   try {
     const credential = await navigator.credentials.get({
